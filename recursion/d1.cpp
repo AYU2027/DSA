@@ -22,6 +22,14 @@ int fact(int n){
     return n*fact(n - 1);
 }
 
+// fabonacci of n using recursion
+// when two recursive calls are there in a function then it is called tree recursion 
+int fabonacci(int n){
+    if(n<= 1) return n;
+    return fabonacci(n - 1) + fabonacci(n - 2);
+}
+
+
 int main(){
     printN(5);
     cout << endl;
