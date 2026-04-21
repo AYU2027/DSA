@@ -67,6 +67,20 @@ int powerOptimized(int a, int b){
     if(b % 2 != 0) fullPower *= a;
     return fullPower;
 }
+
+// titling problem  in a 2*n board and tiles of size 2*1
+int tilingProblem(int n){
+    // base case -- if there is only one way to tile a 2*0 board and 2*1 board
+    if(n == 0 || n == 1) return 1;
+    // then we two choice -- we can place the tile vertically and then we are left with a 2*(n - 1) board 
+    // or we can place the tile horizontally and then we are left with a 2*(n - 2) board
+    return tilingProblem(n - 1) + tilingProblem(n - 2);
+}
+
+
+
+
+
 int main(){
     printN(5);
     cout << endl;
