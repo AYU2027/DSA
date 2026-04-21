@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 // recursion  -- {key notes } 
 
@@ -30,13 +31,18 @@ int fabonacci(int n){
 }
 
 // check if an array is sorted or not using recursion
-bool isSorted(int arr[], int n){
-        if(n == 0 || n == 1) return true;
-            if(arr[0] > arr[1]) return false;
-                return isSorted(arr + 1, n - 1);
-                }
+bool isSorted(vector<int> arr, int i){
+    if(i == arr.size() - 1) return true;
+    if(arr[i] > arr[i + 1]) return false;
+    return isSorted(arr, i + 1);
+}
 
-
+// first occurrence of an element in an array using recursion
+int firstOccurence(vector<int> arr, int key, int i){
+    if(i == arr.size()) return -1;
+    if(arr[i] == key) return i;
+    return firstOccurence(arr, key, i + 1);
+}
 
 int main(){
     printN(5);
