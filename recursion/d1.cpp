@@ -52,7 +52,21 @@ int lastOccurence(vector<int> arr, int key, int i){
 
 
 }
+// power of a number using recursion -- O(n) time complexity
+int power(int a, int b){
+    if(b == 0) return 1;
+    return a*power(a, b - 1);
+}
 
+// power of a number using recursion -- O(log n) time complexity
+// here power get half at each step 
+int powerOptimized(int a, int b){
+    if(b == 0) return 1;
+    int halfPower = powerOptimized(a, b / 2);
+    int fullPower = halfPower*halfPower;
+    if(b % 2 != 0) fullPower *= a;
+    return fullPower;
+}
 int main(){
     printN(5);
     cout << endl;
