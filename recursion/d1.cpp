@@ -44,6 +44,15 @@ int firstOccurence(vector<int> arr, int key, int i){
     return firstOccurence(arr, key, i + 1);
 }
 
+// last occurrence of an element in an array using recursion
+int lastOccurence(vector<int> arr, int key, int i){
+    if(i == 0 ) return -1;
+    if(arr[i] == key) return i;
+    return lastOccurence(arr, key, i - 1);
+
+
+}
+
 int main(){
     printN(5);
     cout << endl;
