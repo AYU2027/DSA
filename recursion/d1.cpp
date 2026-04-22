@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <algorithm>
 using namespace std;
 // recursion  -- {key notes } 
 
@@ -76,6 +78,24 @@ int tilingProblem(int n){
     // or we can place the tile horizontally and then we are left with a 2*(n - 2) board
     return tilingProblem(n - 1) + tilingProblem(n - 2);
 }
+
+
+// remove duplicates from a string using recursion
+
+string pureRecursive(string s) {
+    // Base case: empty string
+    if (s.empty()) return "";
+
+    char first = s[0];
+    string rest = s.substr(1);
+
+    // Remove all instances of 'first' from the 'rest' of the string
+    rest.erase(remove(rest.begin(), rest.end(), first), rest.end());
+
+    // Build the result: current char + recursive call on the cleaned rest
+    return first + pureRecursive(rest);
+}
+
 
 
 
