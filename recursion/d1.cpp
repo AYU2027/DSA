@@ -105,6 +105,21 @@ int countWays(int n){
     return countWays(n - 1) + (n - 1)*countWays(n - 2);
 }
 
+void printValidStrings(int n, string current, char lastChar) {
+    if (current.length() == n) {
+        cout << current << endl;
+        return;
+    }
+
+    // We can always append '0'
+    printValidStrings(n, current + '0', '0');
+
+    // We can only append '1' if the last character wasn't '1'
+    if (lastChar != '1') {
+        printValidStrings(n, current + '1', '1');
+    }
+}
+
 
 
 
