@@ -96,6 +96,14 @@ string pureRecursive(string s) {
     return first + pureRecursive(rest);
 }
 
+// paired or single in group of n people using recursion
+int countWays(int n){
+    // base case -- if there is only one way to pair or single a group of 0 or 1 people
+    if(n == 1 || n == 2) return 1;
+    // then we have two choices -- we can pair the first person with any of the remaining n - 1 people and then we are left with a group of n - 2 people or 
+    // we can leave the first person single and then we are left with a group of n - 1 people
+    return countWays(n - 1) + (n - 1)*countWays(n - 2);
+}
 
 
 
