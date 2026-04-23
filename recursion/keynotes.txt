@@ -1,5 +1,0 @@
-When you write:
-isSorted(int arr[], int n)
-
-The compiler actually sees it as:
-isSorted(int* arr, int n)
