@@ -48,10 +48,28 @@ int countRecursive(const string& s, int i, int j) {
     return count;
 }
 
-int main(){
+int towerOfHanoi(int n, int from, int to, int aux) {
+    // code here
+    if(n==1){
+        return 1;
+        
+    }
+    
+    // firstly tranfer n-1 to from to aux using to tower 
+    int first = towerOfHanoi(n-1,from , aux ,to);
+    // last disc from --> to 
+    
+    // remaining disc aux --> to using from 
+    int second =towerOfHanoi(n-1,aux , to ,from);
+    return first + second + 1;
+}
 
-     string S = "abcab";
-     cout << "Length of the string: " << getLength(S, 0) << endl;
-     cout <<S.length() << endl;
+int main(){
+    int n = 4; // Number of disks
+    cout << "Minimum number of moves required: " << towerOfHanoi(n, 1, 2, 3) << endl;
+
+    //  string S = "abcab";
+    //  cout << "Length of the string: " << getLength(S, 0) << endl;
+    //  cout <<S.length() << endl;
     return 0;
 }
