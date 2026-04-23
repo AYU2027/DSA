@@ -41,7 +41,8 @@ int countRecursive(const string& s, int i, int j) {
 
     // If the outer boundaries match, it forms a new valid substring
     if (s[i] == s[j]) {
-        count++;
+        count++;  
+        // for the cases like aba or aaa , absca 
     }
 
     return count;
@@ -51,5 +52,6 @@ int main(){
 
      string S = "abcab";
      cout << "Length of the string: " << getLength(S, 0) << endl;
+     cout <<S.length() << endl;
     return 0;
 }
