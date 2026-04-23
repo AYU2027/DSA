@@ -47,17 +47,9 @@ int countRecursive(const string& s, int i, int j) {
     return count;
 }
 
-int main() {
-    string S = "abcab";
-    cout << "Valid substrings (Pure Recursion): " 
-         << countRecursive(S, 0, S.length() - 1) << endl;
-    return 0;
-}
-
-
 int main(){
 
-    string str = "hello world";
-    cout << getLength(str, 0) << endl;
+     string S = "abcab";
+     cout << "Length of the string: " << getLength(S, 0) << endl;
     return 0;
 }
