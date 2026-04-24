@@ -50,11 +50,13 @@ public:
 };
 
 int main() {
-    vector<int> arr = {5, 2, 8, 4, 1};
-    Solution sol;
-    sol.mergeSort(arr, 0, arr.size() - 1);
-    for (int x : arr)
-        cout << x << " ";
-    cout << endl;
+    vector<int> arr = {4,2,7,1,5};
+    cout << arr.size() << endl;
+    cout << arr.size()/2 << endl;
+    // Solution sol;
+    // sol.mergeSort(arr, 0, arr.size() - 1);
+    // for (int x : arr)
+    //     cout << x << " ";
+    // cout << endl;
     return 0;
 }
