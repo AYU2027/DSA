@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  here the worst case is (O)n^2  and Best Case (O)n
+
 void OptimizeBubbleSort(vector<int> &arr) {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
