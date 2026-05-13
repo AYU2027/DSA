@@ -1,20 +1,23 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
     int n;
-    cout << "Enter number of rows (half-height): ";
+    cout << "Enter half-height: ";
     cin >> n;
+
+    // Define color constants
+    const string RED = "\033[31m";
+    const string RESET = "\033[0m";
 
     // --- Top Half ---
     for (int i = 1; i <= n; i++) {
-        // Print leading spaces
         for (int j = 1; j <= n - i; j++) cout << " ";
 
-        // Print stars and hollow spaces
         for (int j = 1; j <= (2 * i - 1); j++) {
             if (j == 1 || j == (2 * i - 1))
-                cout << "*";
+                cout << RED << "*" << RESET; // Wrap the star in color codes
             else
                 cout << " ";
         }
@@ -23,13 +26,11 @@ int main() {
 
     // --- Bottom Half ---
     for (int i = n - 1; i >= 1; i--) {
-        // Print leading spaces
         for (int j = 1; j <= n - i; j++) cout << " ";
 
-        // Print stars and hollow spaces
         for (int j = 1; j <= (2 * i - 1); j++) {
             if (j == 1 || j == (2 * i - 1))
-                cout << "*";
+                cout << RED << "*" << RESET; // Wrap the star in color codes
             else
                 cout << " ";
         }
